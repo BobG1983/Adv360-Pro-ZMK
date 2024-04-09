@@ -26,11 +26,12 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+    
+      &mt {
+          retro-tap;
+          tapping-term-ms = <150>;
+      };
     };
-
-  &mt {
-    tapping-term-ms = <400>;
-  };
 
   keymap {
     compatible = "zmk,keymap";
