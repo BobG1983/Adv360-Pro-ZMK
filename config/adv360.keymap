@@ -26,14 +26,14 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <250>;
         };
 
         dbl_tap_brace: dbl_tap_brace {
             compatible = "zmk,behavior-tap-dance";
             label = "DBL_TAP_BRACE";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <250>;
             bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
         };
 
@@ -42,8 +42,6 @@
             label = "DBL_TAP_SQR";
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-
-            tapping-term-ms = <100>;
         };
 
         dbl_tap_tri: dbl_tap_tri {
@@ -51,8 +49,6 @@
             label = "DBL_TAP_TRI";
             #binding-cells = <0>;
             bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
-
-            tapping-term-ms = <100>;
         };
     };
 
