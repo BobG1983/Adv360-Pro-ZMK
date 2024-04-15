@@ -19,6 +19,41 @@
             quick-tap-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
+
+        dbl_tap_paren: dbl_tap_paren {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DBL_TAP_PAREN";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            tapping-term-ms = <100>;
+        };
+
+        dbl_tap_brace: dbl_tap_brace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DBL_TAP_BRACE";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+        };
+
+        dbl_tap_sqr: dbl_tap_sqr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DBL_TAP_SQR";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            tapping-term-ms = <100>;
+        };
+
+        dbl_tap_tri: dbl_tap_tri {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DBL_TAP_TRI";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+
+            tapping-term-ms = <100>;
+        };
     };
 
     keymap {
@@ -26,11 +61,11 @@
 
         Qwerty {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2  &kp N3    &kp N4     &kp N5  &tog 1                                                                          &mo 3            &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&none      &kp Q      &kp W   &kp E     &kp R      &kp T   &none                                                                           &none            &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A      &kp S   &kp D     &kp F      &kp G   &none             &none           &none         &kp LGUI   &none                &none            &kp H   &kp J   &kp K      &kp L     &kp SQT   &kp SEMI
-&none      &kp Z      &kp X   &kp C     &kp V      &kp B                                     &kp HOME      &kp PG_UP                                        &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &none
-&kp LGUI   &kp GRAVE  &none   &kp LEFT  &kp RIGHT          &bht LSHFT SPACE  &bht LCTRL TAB  &kp END       &kp PG_DN  &bht LEFT_ALT ENTER  &bht RSHFT BSPC          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &none
+&kp EQUAL  &kp N1          &kp N2        &kp N3    &kp N4     &kp N5  &none                                                                    &none            &kp N6  &kp N7  &kp N8     &kp N9        &kp N0          &kp MINUS
+&kp GRAVE  &kp Q           &kp W         &kp E     &kp R      &kp T   &kp HOME                                                                 &kp PAGE_UP      &kp Y   &kp U   &kp I      &kp O         &kp P           &kp BSLH
+&kp ESC    &kp A           &kp S         &kp D     &kp F      &kp G   &kp END           &none           &none      &none  &none                &kp PAGE_DOWN    &kp H   &kp J   &kp K      &kp L         &kp SQT         &kp SEMI
+&none      &kp Z           &kp X         &kp C     &kp V      &kp B                                     &none      &none                                        &kp N   &kp M   &kp COMMA  &kp DOT       &kp FSLH        &none
+&kp LGUI   &dbl_tap_paren  &dbl_tap_sqr  &kp LEFT  &kp RIGHT          &bht LSHFT SPACE  &bht LCTRL TAB  &none      &none  &bht LEFT_ALT ENTER  &bht RSHFT BSPC          &kp UP  &kp DOWN   &dbl_tap_tri  &dbl_tap_brace  &kp LEFT_WIN
             >;
         };
 
@@ -54,13 +89,13 @@
             >;
         };
 
-        mod {
+        Management {
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans                  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &bootloader                                            &bootloader             &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none                             &none      &none                                           &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
+&none       &none         &none         &none         &none         &none            &none                                  &trans                &none  &none  &none  &none  &none  &none
+&none       &bl BL_OFF    &bl BL_ON     &bl BL_DEC    &bl BL_INC    &rgb_ug RGB_TOG  &none                                  &bootloader           &none  &none  &none  &none  &none  &none
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &none  &none  &none      &none  &none  &rgb_ug RGB_MEFS_CMD  &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none         &none                          &none      &none                               &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none                          &none  &none  &none      &none  &none  &none                        &none  &none  &none  &none  &none
             >;
         };
     };
