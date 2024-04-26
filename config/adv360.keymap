@@ -4,11 +4,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-CONFIG_ZMK_BATTERY_REPORTING=y
-CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=y
-CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING=y
-CONFIG_ZMK_BATTERY_REPORT_INTERVAL=240
-
 / {
     behaviors {
         #include "macros.dtsi"
