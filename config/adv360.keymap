@@ -59,7 +59,7 @@
             bindings = <
 &kp EQUAL  &kp N1          &kp N2        &kp N3    &kp N4     &kp N5  &tog 1                                                                   &tog 4           &kp N6  &kp N7  &kp N8     &kp N9        &kp N0          &kp MINUS
 &kp GRAVE  &kp Q           &kp W         &kp E     &kp R      &kp T   &kp HOME                                                                 &kp PAGE_UP      &kp Y   &kp U   &kp I      &kp O         &kp P           &kp BSLH
-&kp ESC    &kp A           &kp S         &kp D     &kp F      &kp G   &kp END           &kp LEFT_ALT    &mo 2      &mo 2  &kp LCTRL            &kp PAGE_DOWN    &kp H   &kp J   &kp K      &kp L         &kp SQT         &kp SEMI
+&kp ESC    &kp A           &kp S         &kp D     &kp F      &kp G   &kp END           &kp LEFT_ALT    &mo 2      &mo 2  &kp LCTRL            &kp PAGE_DOWN    &kp H   &kp J   &kp K      &kp L         &kp SEMI        &kp APOS
 &kp LC(P)  &kp Z           &kp X         &kp C     &kp V      &kp B                                     &to 3      &to 3                                        &kp N   &kp M   &kp COMMA  &kp DOT       &kp FSLH        &kp LS(LC(P))
 &kp LGUI   &dbl_tap_paren  &dbl_tap_sqr  &kp LEFT  &kp RIGHT          &bht LSHFT SPACE  &bht LCTRL TAB  &none      &none  &bht LEFT_ALT ENTER  &bht RSHFT BSPC          &kp UP  &kp DOWN   &dbl_tap_tri  &dbl_tap_brace  &kp LEFT_WIN
             >;
